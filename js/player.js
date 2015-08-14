@@ -39,7 +39,7 @@ var Player = {
 		console.log(this.name + " : " + this.score);
 		$("#player_" + this.id + " .score").html(this.score);
 	},
-	setBankrupt: function (is_bankrupt) {
+	setBankrupt: function () {
 		if (this.score > 0) {
 		    this.score = 0;
 		    console.log(this.name + " : " + this.score);
