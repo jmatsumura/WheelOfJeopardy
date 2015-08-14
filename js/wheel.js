@@ -307,7 +307,7 @@ var Wheel = (function() {
 		}
 		else {
 			var winner = getWinner()
-			alert("Done! Winner is " + winner[0] + ". <br/>" + winner[0] + "'s point is " + winner[1]);
+			alert("Done! Winner is " + winner[0] + ".\n" + winner[0] + "'s point is " + winner[1]);
 		}
 	}
 	function getWinner() {
