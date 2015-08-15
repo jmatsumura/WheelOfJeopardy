@@ -266,6 +266,10 @@ var Wheel = (function() {
 			players[turn].removeOneToken();
 			return false;
 		}
+		else if (current_segment == "Lose Turn" && players[turn].checkToken()){
+			players[turn].removeOneToken();
+			return false;
+		}
 		else if (current_segment == "Spin Again" || current_segment == "Player's Choice" || current_segment == "Opponents' Choice"){
 			return false;
 		}
@@ -315,7 +319,7 @@ var Wheel = (function() {
 	function getWinner() {
 		var current = 0, winner;
 		for(var i in players) {
-			if (players[i].getScore() >= current) {
+			if ((players[i].getScore()+scoreArray[i]) >= current) {
 				winner = players[i].getName();
 				current = players[i].getScore()+scoreArray[i];
 			}
@@ -353,12 +357,7 @@ var Wheel = (function() {
 	}
 	
 	function loseTurn() {
-		if(players[turn].checkToken()) {
-			players[turn].removeOneToken();
-		}
-		else {
-			alert("Lost turn!");
-		}
+		alert("Lost turn!");
 	}
 	
 	function spinAgain() {
